@@ -81,5 +81,13 @@
     },
     // Python extra paths
     // Note: this is filled up when "./isaaclab.sh -i" is run
-    "python.analysis.extraPaths": []
+    "python.analysis.extraPaths": [],
+    // Pylance configuration for better type checking and to reduce false positives
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.include": ["source"],
+    "python.analysis.exclude": ["**/__pycache__", "**/.*", "build", "dist", "docs", "scripts", "tools", "apps", "docker"],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "none"
 }

@@ -9,7 +9,9 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false
         },
         {
             "name": "Python: Attach (windows-x86_64/linux-x86_64)",
@@ -24,7 +26,10 @@
             "request": "launch",
             "args" : ["--task", "Isaac-Reach-Franka-v0", "--headless"],
             "program": "${workspaceFolder}/scripts/reinforcement_learning/rsl_rl/train.py",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false,
+            "env": {"PYTHONPATH": "${workspaceFolder}/source"}
         },
         {
             "name": "Python: Play Environment",
@@ -32,7 +37,10 @@
             "request": "launch",
             "args" : ["--task", "Isaac-Reach-Franka-v0", "--num_envs", "32"],
             "program": "${workspaceFolder}/scripts/reinforcement_learning/rsl_rl/play.py",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false,
+            "env": {"PYTHONPATH": "${workspaceFolder}/source"}
         },
         {
             "name": "Python: SinglePytest",

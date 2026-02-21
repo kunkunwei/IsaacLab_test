@@ -1,0 +1,26 @@
+# 快速修复总结
+
+## 🎯 你的 F5 调试运行问题已解决！
+
+### 发现了 3 个主要问题：
+
+1. **❌ 缺少工作目录** → ✅ 已添加 `"cwd": "${workspaceFolder}"`
+2. **❌ PYTHONPATH 未配置** → ✅ 已添加 `"env": {"PYTHONPATH": "${workspaceFolder}/source"}`  
+3. **❌ Debug 限制** → ✅ 已设置 `"justMyCode": false`
+
+### 修改的文件：
+- ✅ `.vscode/launch.json` (main config)
+- ✅ `.vscode/tools/launch.template.json` (template)
+
+### 现在可以做什么：
+- 按 **F5** 直接运行训练脚本
+- 按 **F5** 直接运行推理脚本  
+- 在 isaaclab 库代码中设置断点调试
+- 所有相对路径和资源加载正常工作
+
+### 下一步：
+1. 重新启动 VSCode
+2. 在 `launch.json` 的调试配置中选择你要运行的脚本
+3. 按 **F5** 开始调试
+
+详细说明请参考：**DEBUG_FIXES.md**

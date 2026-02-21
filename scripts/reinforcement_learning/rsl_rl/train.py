@@ -15,6 +15,27 @@ from isaaclab.app import AppLauncher
 # local imports
 import cli_args  # isort: skip
 
+# ======================================================================
+# VSCode 调试默认参数（仅在未通过命令行传入参数时生效）
+# 当通过 isaaclab_gpu.sh 命令行运行时，命令行参数会覆盖这里的默认值
+# 修改 VSCODE_DEBUG_DEFAULTS 里的 task 来切换训练任务
+# ======================================================================
+VSCODE_DEBUG_DEFAULTS = {
+    "task": "Isaac-Velocity-Rough-Anymal-C-v0",
+    "headless": True,
+    "num_envs": None,
+}
+
+# 如果没有任何参数传入（VSCode 直接运行），注入默认参数
+if len(sys.argv) == 1:
+    if VSCODE_DEBUG_DEFAULTS["task"]:
+        sys.argv += ["--task", VSCODE_DEBUG_DEFAULTS["task"]]
+    if VSCODE_DEBUG_DEFAULTS["headless"]:
+        sys.argv += ["--headless"]
+    if VSCODE_DEBUG_DEFAULTS["num_envs"]:
+        sys.argv += ["--num_envs", str(VSCODE_DEBUG_DEFAULTS["num_envs"])]
+# ======================================================================
+
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Train an RL agent with RSL-RL.")
 parser.add_argument("--video", action="store_true", default=False, help="Record videos during training.")

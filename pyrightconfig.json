@@ -1,0 +1,23 @@
+{
+    "pythonVersion": "3.11",
+    "pythonPlatform": "Linux",
+    "typeCheckingMode": "off",
+    "reportMissingImports": true,
+    "reportMissingTypeStubs": false,
+    "reportAttributeAccessIssue": false,
+    "reportOptionalMemberAccess": false,
+    "reportOptionalSubscript": false,
+    "reportOptionalCall": false,
+    "reportOptionalIterable": false,
+    "reportOptionalContextManager": false,
+    "reportOptionalOperand": false,
+    "reportOptionalArgumentType": false,
+    "reportOptionalAssignment": false,
+    "reportOptionalCallIsCallable": false,
+    "reportGeneralTypeIssues": false,
+    "reportUnknownParameterType": false,
+    "reportUnknownArgumentType": false,
+    "reportUnknownVariableType": false,
+    "reportUnknownMemberType": false,
+    "reportUnknownFunctionMemberType": false
+}

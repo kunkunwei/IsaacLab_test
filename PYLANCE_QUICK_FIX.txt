@@ -1,0 +1,34 @@
+# Pylance 类型检查问题 - 快速修复
+
+## 🎯 问题
+```
+无法访问类"RslRlBaseRunnerCfg"的属性"class_name"
+属性"class_name"未知
+```
+
+## ✅ 已修复
+已禁用 Pylance 的严格类型检查，保留 IntelliSense 功能。
+
+## 📁 修改的文件
+- ✅ `pyrightconfig.json` (新建)
+- ✅ `.vscode/settings.json` (已更新)
+- ✅ `.vscode/tools/settings.template.json` (已更新)
+
+## 🚀 立即生效
+**重启 VSCode** 或在命令面板中运行 "Pylance: Restart"
+
+## 💡 说明
+这些错误是 Pylance 的误报，因为：
+1. `class_name` 属性在子类（`RslRlOnPolicyRunnerCfg` 等）中定义
+2. Hydra 装饰器在运行时加载正确的子类
+3. Pylance 只看到基类的类型注解，无法理解动态配置
+
+现在已关闭严格检查，但保留了有用的错误检测（如导入错误、语法错误等）。
+
+## ✨ 好处
+- ✅ 消除误报的类型错误
+- ✅ 保留 IntelliSense 代码补全
+- ✅ 保留导入/语法检查
+- ✅ 代码执行不受影响
+
+详细信息见：PYLANCE_FIX.md
